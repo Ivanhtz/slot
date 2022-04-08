@@ -39,6 +39,7 @@ body {
 }
 
 .button {
+  font-family: "Satisfy", cursive;
   width: 150px;
   height: 150px;
   background-color: #ca1d31;
@@ -47,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
@@ -54,6 +56,25 @@ body {
   border: 2px solid black;
   -webkit-box-shadow: 9px 7px 7px 6px;
   box-shadow: 9px 7px 7px 6px;
+}
+
+.buttonD {
+  font-family: "Satisfy", cursive;
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  font-size: 2rem;
+  font-weight: bold;
+
+  user-select: none;
+  border: 4px solid red;
 }
 
 .button:active {
@@ -109,6 +130,7 @@ body {
 }
 
 .bottom {
+  font-family: "Satisfy", cursive;
   width: 200px;
   height: 80px;
   border: 2px solid black;
@@ -116,10 +138,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   font-size: 1.5rem;
   font-weight: bold;
   background-color: #ca1d31;
   cursor: pointer;
+  user-select: none;
+  box-shadow: 5px 5px 5px;
+}
+
+.bottomD {
+  font-family: "Satisfy", cursive;
+  width: 200px;
+  height: 80px;
+  border: 2px solid black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: black;
+  color: red;
+
   user-select: none;
   box-shadow: 5px 5px 5px;
 }
