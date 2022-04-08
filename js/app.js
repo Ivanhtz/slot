@@ -3,7 +3,7 @@ const buttonStart = document.querySelector(".button");
 
 let credit = 10;
 
-const images = ["1.png", "2.png", "3.png", "4.png", "5.png"];
+const images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
 
 let image1 = document.createElement("img");
 image1.setAttribute("src", "images/inicio.png");
@@ -48,7 +48,7 @@ const credits = (credit) => {
 };
 
 const imageRandom = (image) => {
-  let numberRandom = Math.floor(Math.random() * 5);
+  let numberRandom = Math.floor(Math.random() * 7);
   let imageRandom = images[numberRandom];
 
   image.setAttribute("src", `images/${imageRandom}`);
