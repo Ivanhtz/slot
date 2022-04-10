@@ -203,8 +203,10 @@ body {
   width: 90%;
   max-width: 600px;
   max-height: 90%;
-  background-color: beige;
+  background-color: black;
+  color: yellow;
   margin: auto;
+  border: 3px solid red;
   border-radius: 6px;
   padding: 3em 2.5em;
   display: grid;
@@ -230,7 +232,7 @@ body {
 .modal__close {
   text-decoration: none;
   color: #fff;
-  background-color: #f26250;
+  background-color: red;
   padding: 1em 3em;
   border: 1px solid;
   border-radius: 6px;

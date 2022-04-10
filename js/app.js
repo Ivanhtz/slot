@@ -35,8 +35,27 @@ const coin = document.querySelector(".coin");
 
 // Functions
 
+const errorSound = () => {
+  const error = document.createElement("audio");
+  error.setAttribute("src", "./audio/fallo.mp3");
+  error.play();
+};
+
+const winSound = () => {
+  const win = document.createElement("audio");
+  win.setAttribute("src", "./audio/acierto.mp3");
+  win.play();
+};
+
+const leverSound = () => {
+  const lever = document.createElement("audio");
+  lever.setAttribute("src", "./audio/lever.mp3");
+  lever.play();
+};
+
 const showModal = () => {
   modal.classList.add("modal--show");
+  winSound();
   closeModal.addEventListener("click", (e) => {
     e.preventDefault;
     modal.classList.remove("modal--show");
@@ -47,6 +66,7 @@ const credits = (credit) => {
   if (credit <= 0) {
     buttonStart.disabled = true;
     buttonStart.classList.replace("button", "buttonD");
+    errorSound();
   }
   if (credit <= 0) {
     buttonBottomLeft.disabled = true;
@@ -157,6 +177,7 @@ const awards = (image1, image2, image3) => {
 buttonReload.addEventListener("click", () => window.location.reload());
 
 buttonStart.addEventListener("click", () => {
+  leverSound();
   imageRandom(image1);
   imageRandom(image2);
   imageRandom(image3);
@@ -168,25 +189,28 @@ buttonStart.addEventListener("click", () => {
 });
 
 buttonBottomLeft.addEventListener("click", () => {
+  leverSound();
   imageRandom(image1);
   awards(image1, image2, image3);
-  credit -= 2;
+  credit -= 1;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
 });
 
 buttonBottomCenter.addEventListener("click", () => {
+  leverSound();
   imageRandom(image2);
   awards(image1, image2, image3);
-  credit -= 2;
+  credit -= 1;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
 });
 
 buttonBottomRight.addEventListener("click", () => {
+  leverSound();
   imageRandom(image3);
   awards(image1, image2, image3);
-  credit -= 2;
+  credit -= 1;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
 });
