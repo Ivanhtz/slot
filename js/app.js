@@ -1,6 +1,12 @@
 // HTML
 const buttonStart = document.querySelector(".button");
 
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector(".modal__close");
+const modalParagraph = document.querySelector(".modal__paragraph");
+
+const buttonReload = document.querySelector(".gold");
+
 let credit = 10;
 
 const images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
@@ -28,6 +34,15 @@ const buttonBottomRight = document.querySelector(".bottom3");
 const coin = document.querySelector(".coin");
 
 // Functions
+
+const showModal = () => {
+  modal.classList.add("modal--show");
+  closeModal.addEventListener("click", (e) => {
+    e.preventDefault;
+    modal.classList.remove("modal--show");
+  });
+};
+
 const credits = (credit) => {
   if (credit <= 0) {
     buttonStart.disabled = true;
@@ -54,36 +69,124 @@ const imageRandom = (image) => {
   image.setAttribute("src", `images/${imageRandom}`);
 };
 
-// Events
-buttonStart.addEventListener("click", () => {
-  credit -= 1;
-  coin.textContent = `Credits: ${credit} $`;
-  credits(credit);
+const awards = (image1, image2, image3) => {
+  const imageSrc1 = image1.attributes.src.textContent;
+  const imageSrc2 = image2.attributes.src.textContent;
+  const imageSrc3 = image3.attributes.src.textContent;
+  const im1 = "images/1.png";
+  const im2 = "images/2.png";
+  const im3 = "images/3.png";
+  const im4 = "images/4.png";
+  const im5 = "images/5.png";
+  const im6 = "images/6.png";
+  const im7 = "images/7.png";
 
+  if (imageSrc1 === im1) {
+    if (imageSrc2 === im1) {
+      if (imageSrc3 === im1) {
+        modalParagraph.textContent = "Has ganado un premio de 5 créditos";
+        showModal();
+        credit += 5;
+      }
+    }
+  }
+
+  if (imageSrc1 === im2) {
+    if (imageSrc2 === im2) {
+      if (imageSrc3 === im2) {
+        modalParagraph.textContent = "Has ganado un premio de 10 créditos";
+        showModal();
+        credit += 10;
+      }
+    }
+  }
+
+  if (imageSrc1 === im3) {
+    if (imageSrc2 === im3) {
+      if (imageSrc3 === im3) {
+        modalParagraph.textContent = "Has ganado un premio de 15 créditos";
+        showModal();
+        credit += 15;
+      }
+    }
+  }
+
+  if (imageSrc1 === im4) {
+    if (imageSrc2 === im4) {
+      if (imageSrc3 === im4) {
+        modalParagraph.textContent = "Has ganado un premio de 20 créditos";
+        showModal();
+        credit += 20;
+      }
+    }
+  }
+
+  if (imageSrc1 === im5) {
+    if (imageSrc2 === im5) {
+      if (imageSrc3 === im5) {
+        modalParagraph.textContent = "Has ganado un premio de 25 créditos";
+        showModal();
+        credit += 25;
+      }
+    }
+  }
+
+  if (imageSrc1 === im6) {
+    if (imageSrc2 === im6) {
+      if (imageSrc3 === im6) {
+        modalParagraph.textContent = "Has ganado un premio de 30 créditos";
+        showModal();
+        credit += 30;
+      }
+    }
+  }
+
+  if (imageSrc1 === im7) {
+    if (imageSrc2 === im7) {
+      if (imageSrc3 === im7) {
+        modalParagraph.textContent = "Has ganado un premio de 35 créditos";
+        showModal();
+        credit += 35;
+      }
+    }
+  }
+};
+
+// Events
+
+buttonReload.addEventListener("click", () => window.location.reload());
+
+buttonStart.addEventListener("click", () => {
   imageRandom(image1);
   imageRandom(image2);
   imageRandom(image3);
+
+  awards(image1, image2, image3);
+  credit -= 1;
+  coin.textContent = `Credits: ${credit} $`;
+  credits(credit);
 });
 
 buttonBottomLeft.addEventListener("click", () => {
-  credit -= 1;
+  imageRandom(image1);
+  awards(image1, image2, image3);
+  credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
-  imageRandom(image1);
 });
 
 buttonBottomCenter.addEventListener("click", () => {
-  credit -= 1;
+  imageRandom(image2);
+  awards(image1, image2, image3);
+  credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
-  imageRandom(image2);
 });
 
 buttonBottomRight.addEventListener("click", () => {
-  credit -= 1;
+  imageRandom(image3);
+  awards(image1, image2, image3);
+  credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
-  imageRandom(image3);
 });
-
-console.log();
