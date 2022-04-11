@@ -19,12 +19,12 @@ image2.setAttribute("src", "images/inicio.png");
 let image3 = document.createElement("img");
 image3.setAttribute("src", "images/inicio.png");
 
-const figure1 = document.querySelector(".figure1");
-figure1.appendChild(image1);
-const figure2 = document.querySelector(".figure2");
-figure2.appendChild(image2);
-const figure3 = document.querySelector(".figure3");
-figure3.appendChild(image3);
+const figureLeft = document.querySelector(".figureLeft");
+figureLeft.appendChild(image1);
+const figureCenter = document.querySelector(".figureCenter");
+figureCenter.appendChild(image2);
+const figureRight = document.querySelector(".figureRight");
+figureRight.appendChild(image3);
 
 const buttonBottomLeft = document.querySelector(".bottomLeft");
 const buttonBottomCenter = document.querySelector(".bottomCenter");
