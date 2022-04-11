@@ -1,4 +1,3 @@
-// HTML
 const buttonStart = document.querySelector(".button");
 
 const modal = document.querySelector(".modal");
@@ -32,8 +31,6 @@ const buttonBottomCenter = document.querySelector(".bottom2");
 const buttonBottomRight = document.querySelector(".bottom3");
 
 const coin = document.querySelector(".coin");
-
-// Functions
 
 const errorSound = () => {
   const error = document.createElement("audio");
@@ -171,8 +168,6 @@ const awards = (image1, image2, image3) => {
     }
   }
 };
-
-// Events
 
 buttonReload.addEventListener("click", () => window.location.reload());
 
