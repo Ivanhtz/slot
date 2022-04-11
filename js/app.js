@@ -1,3 +1,5 @@
+// import { awards } from "./awards.js";
+
 const buttonStart = document.querySelector(".button");
 
 const modal = document.querySelector(".modal");
@@ -32,6 +34,14 @@ const buttonBottomRight = document.querySelector(".bottomRight");
 
 const coin = document.querySelector(".coin");
 coin.textContent = `Credits: ${credit}`;
+
+const advanceLowerButtons = (image) => {
+  imageRandom(image);
+  awards(imageLeft, imageCenter, imageRight);
+  credit -= 1;
+  coin.textContent = `Credits: ${credit} $`;
+  credits(credit);
+};
 
 const errorSound = () => {
   const error = document.createElement("audio");
@@ -186,27 +196,15 @@ buttonStart.addEventListener("click", () => {
 
 buttonBottomLeft.addEventListener("click", () => {
   leverSound();
-  imageRandom(imageLeft);
-  awards(imageLeft, imageCenter, imageRight);
-  credit -= 1;
-  coin.textContent = `Credits: ${credit} $`;
-  credits(credit);
+  advanceLowerButtons(imageLeft);
 });
 
 buttonBottomCenter.addEventListener("click", () => {
   leverSound();
-  imageRandom(imageCenter);
-  awards(imageLeft, imageCenter, imageRight);
-  credit -= 1;
-  coin.textContent = `Credits: ${credit} $`;
-  credits(credit);
+  advanceLowerButtons(imageCenter);
 });
 
 buttonBottomRight.addEventListener("click", () => {
   leverSound();
-  imageRandom(imageRight);
-  awards(imageLeft, imageCenter, imageRight);
-  credit -= 1;
-  coin.textContent = `Credits: ${credit} $`;
-  credits(credit);
+  advanceLowerButtons(imageRight);
 });
