@@ -13,9 +13,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === sun) {
     if (imageSrcCenter === sun) {
       if (imageSrcRight === sun) {
-        modalParagraph.textContent = "You have won a prize of 5 credits";
-        showModal();
-        credit += 5;
+        showModal(5);
       }
     }
   }
@@ -23,9 +21,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === women) {
     if (imageSrcCenter === women) {
       if (imageSrcRight === women) {
-        modalParagraph.textContent = "You have won a prize of 10 credits";
-        showModal();
-        credit += 10;
+        showModal(10);
       }
     }
   }
@@ -33,9 +29,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === diamond) {
     if (imageSrcCenter === diamond) {
       if (imageSrcRight === diamond) {
-        modalParagraph.textContent = "You have won a prize of 15 credits";
-        showModal();
-        credit += 15;
+        showModal(15);
       }
     }
   }
@@ -43,9 +37,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === toad) {
     if (imageSrcCenter === toad) {
       if (imageSrcRight === toad) {
-        modalParagraph.textContent = "You have won a prize of 20 credits";
-        showModal();
-        credit += 20;
+        showModal(20);
       }
     }
   }
@@ -53,9 +45,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === heart) {
     if (imageSrcCenter === heart) {
       if (imageSrcRight === heart) {
-        modalParagraph.textContent = "You have won a prize of 25 credits";
-        showModal();
-        credit += 25;
+        showModal(25);
       }
     }
   }
@@ -63,9 +53,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === moon) {
     if (imageSrcCenter === moon) {
       if (imageSrcRight === moon) {
-        modalParagraph.textContent = "You have won a prize of 30 credits";
-        showModal();
-        credit += 30;
+        showModal(30);
       }
     }
   }
@@ -73,9 +61,7 @@ export const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === star) {
     if (imageSrcCenter === star) {
       if (imageSrcRight === star) {
-        modalParagraph.textContent = "You have won a prize of 35 credits";
-        showModal();
-        credit += 35;
+        showModal(35);
       }
     }
   }

@@ -1,10 +1,20 @@
-// import { awards } from "./awards.js";
-
 const buttonStart = document.querySelector(".button");
 
-const modal = document.querySelector(".modal");
-const closeModal = document.querySelector(".modal__close");
-const modalParagraph = document.querySelector(".modal__paragraph");
+const showModal = (cred) => {
+  let credi = cred;
+  const modal = document.querySelector(".modal");
+  const closeModal = document.querySelector(".modal__close");
+  const modalParagraph = document.querySelector(".modal__paragraph");
+  modalParagraph.textContent = `You have won a prize of ${credi} credits`;
+  modal.classList.add("modal--show");
+  winSound();
+  closeModal.addEventListener("click", (e) => {
+    e.preventDefault;
+    modal.classList.remove("modal--show");
+  });
+
+  credit += credi;
+};
 
 const buttonReload = document.querySelector(".gold");
 
@@ -36,6 +46,7 @@ const coin = document.querySelector(".coin");
 coin.textContent = `Credits: ${credit}`;
 
 const advanceLowerButtons = (image) => {
+  leverSound();
   imageRandom(image);
   awards(imageLeft, imageCenter, imageRight);
   credit -= 1;
@@ -59,15 +70,6 @@ const leverSound = () => {
   const lever = document.createElement("audio");
   lever.setAttribute("src", "./audio/lever.mp3");
   lever.play();
-};
-
-const showModal = () => {
-  modal.classList.add("modal--show");
-  winSound();
-  closeModal.addEventListener("click", (e) => {
-    e.preventDefault;
-    modal.classList.remove("modal--show");
-  });
 };
 
 const credits = (credit) => {
@@ -112,9 +114,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === sun) {
     if (imageSrcCenter === sun) {
       if (imageSrcRight === sun) {
-        modalParagraph.textContent = "You have won a prize of 5 credits";
-        showModal();
-        credit += 5;
+        showModal(5);
       }
     }
   }
@@ -122,9 +122,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === women) {
     if (imageSrcCenter === women) {
       if (imageSrcRight === women) {
-        modalParagraph.textContent = "You have won a prize of 10 credits";
-        showModal();
-        credit += 10;
+        showModal(10);
       }
     }
   }
@@ -132,9 +130,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === diamond) {
     if (imageSrcCenter === diamond) {
       if (imageSrcRight === diamond) {
-        modalParagraph.textContent = "You have won a prize of 15 credits";
-        showModal();
-        credit += 15;
+        showModal(15);
       }
     }
   }
@@ -142,9 +138,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === toad) {
     if (imageSrcCenter === toad) {
       if (imageSrcRight === toad) {
-        modalParagraph.textContent = "You have won a prize of 20 credits";
-        showModal();
-        credit += 20;
+        showModal(20);
       }
     }
   }
@@ -152,9 +146,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === heart) {
     if (imageSrcCenter === heart) {
       if (imageSrcRight === heart) {
-        modalParagraph.textContent = "You have won a prize of 25 credits";
-        showModal();
-        credit += 25;
+        showModal(25);
       }
     }
   }
@@ -162,9 +154,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === moon) {
     if (imageSrcCenter === moon) {
       if (imageSrcRight === moon) {
-        modalParagraph.textContent = "You have won a prize of 30 credits";
-        showModal();
-        credit += 30;
+        showModal(30);
       }
     }
   }
@@ -172,9 +162,7 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   if (imageSrcLeft === star) {
     if (imageSrcCenter === star) {
       if (imageSrcRight === star) {
-        modalParagraph.textContent = "You have won a prize of 35 credits";
-        showModal();
-        credit += 35;
+        showModal(35);
       }
     }
   }
@@ -195,16 +183,13 @@ buttonStart.addEventListener("click", () => {
 });
 
 buttonBottomLeft.addEventListener("click", () => {
-  leverSound();
   advanceLowerButtons(imageLeft);
 });
 
 buttonBottomCenter.addEventListener("click", () => {
-  leverSound();
   advanceLowerButtons(imageCenter);
 });
 
 buttonBottomRight.addEventListener("click", () => {
-  leverSound();
   advanceLowerButtons(imageRight);
 });
