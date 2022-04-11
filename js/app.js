@@ -26,9 +26,9 @@ figure2.appendChild(image2);
 const figure3 = document.querySelector(".figure3");
 figure3.appendChild(image3);
 
-const buttonBottomLeft = document.querySelector(".bottom1");
-const buttonBottomCenter = document.querySelector(".bottom2");
-const buttonBottomRight = document.querySelector(".bottom3");
+const buttonBottomLeft = document.querySelector(".bottomLeft");
+const buttonBottomCenter = document.querySelector(".bottomCenter");
+const buttonBottomRight = document.querySelector(".bottomRight");
 
 const coin = document.querySelector(".coin");
 
