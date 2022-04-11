@@ -104,7 +104,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im1) {
     if (imageSrc2 === im1) {
       if (imageSrc3 === im1) {
-        modalParagraph.textContent = "Has ganado un premio de 5 créditos";
+        modalParagraph.textContent = "You have won a prize of 5 credits";
         showModal();
         credit += 5;
       }
@@ -114,7 +114,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im2) {
     if (imageSrc2 === im2) {
       if (imageSrc3 === im2) {
-        modalParagraph.textContent = "Has ganado un premio de 10 créditos";
+        modalParagraph.textContent = "You have won a prize of 10 credits";
         showModal();
         credit += 10;
       }
@@ -124,7 +124,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im3) {
     if (imageSrc2 === im3) {
       if (imageSrc3 === im3) {
-        modalParagraph.textContent = "Has ganado un premio de 15 créditos";
+        modalParagraph.textContent = "You have won a prize of 15 credits";
         showModal();
         credit += 15;
       }
@@ -134,7 +134,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im4) {
     if (imageSrc2 === im4) {
       if (imageSrc3 === im4) {
-        modalParagraph.textContent = "Has ganado un premio de 20 créditos";
+        modalParagraph.textContent = "You have won a prize of 20 credits";
         showModal();
         credit += 20;
       }
@@ -144,7 +144,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im5) {
     if (imageSrc2 === im5) {
       if (imageSrc3 === im5) {
-        modalParagraph.textContent = "Has ganado un premio de 25 créditos";
+        modalParagraph.textContent = "You have won a prize of 25 credits";
         showModal();
         credit += 25;
       }
@@ -154,7 +154,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im6) {
     if (imageSrc2 === im6) {
       if (imageSrc3 === im6) {
-        modalParagraph.textContent = "Has ganado un premio de 30 créditos";
+        modalParagraph.textContent = "You have won a prize of 30 credits";
         showModal();
         credit += 30;
       }
@@ -164,7 +164,7 @@ const awards = (image1, image2, image3) => {
   if (imageSrc1 === im7) {
     if (imageSrc2 === im7) {
       if (imageSrc3 === im7) {
-        modalParagraph.textContent = "Has ganado un premio de 35 créditos";
+        modalParagraph.textContent = "You have won a prize of 35 credits";
         showModal();
         credit += 35;
       }
