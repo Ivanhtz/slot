@@ -31,6 +31,7 @@ const buttonBottomCenter = document.querySelector(".bottomCenter");
 const buttonBottomRight = document.querySelector(".bottomRight");
 
 const coin = document.querySelector(".coin");
+coin.textContent = `Credits: ${credit}`;
 
 const errorSound = () => {
   const error = document.createElement("audio");
