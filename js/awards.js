@@ -1,4 +1,4 @@
-export const awards = (imageLeft, imageCenter, imageRight) => {
+const awards = (imageLeft, imageCenter, imageRight) => {
   const imageSrcLeft = imageLeft.attributes.src.textContent;
   const imageSrcCenter = imageCenter.attributes.src.textContent;
   const imageSrcRight = imageRight.attributes.src.textContent;
