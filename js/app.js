@@ -21,7 +21,7 @@ const buttonReload = document.querySelector(".gold");
 
 let credit = 10;
 
-const images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png"];
+const images = ["1", "2", "3", "4", "5", "6", "7"];
 
 let imageLeft = document.createElement("img");
 imageLeft.setAttribute("src", "images/inicio.png");
@@ -74,11 +74,6 @@ const leverSound = () => {
 };
 
 const credits = (credit) => {
-  // if (credit <= 0) {
-  //   buttonStart.disabled = true;
-  //   buttonStart.classList.replace("button", "buttonD");
-  //   errorSound();
-  // }
   if (credit <= 0) {
     buttonStart.disabled = true;
     buttonStart.classList.replace("button", "buttonD");
@@ -99,7 +94,7 @@ const imageRandom = (image) => {
   let numberRandom = Math.floor(Math.random() * 7);
   let imageRandom = images[numberRandom];
 
-  image.setAttribute("src", `images/${imageRandom}`);
+  image.setAttribute("src", `images/${imageRandom}.png`);
 };
 
 awards(imageLeft, imageCenter, imageRight);
