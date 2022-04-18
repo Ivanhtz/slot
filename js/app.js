@@ -1,4 +1,5 @@
 const buttonStart = document.querySelector(".button");
+const buttonX2 = document.querySelector(".x2");
 
 const showModal = (cred) => {
   let credi = cred;
@@ -107,6 +108,18 @@ buttonStart.addEventListener("click", () => {
 
   awards(imageLeft, imageCenter, imageRight);
   credit -= 1;
+  coin.textContent = `Credits: ${credit} $`;
+  credits(credit);
+});
+
+buttonX2.addEventListener("click", () => {
+  leverSound();
+  imageRandom(imageLeft);
+  imageRandom(imageCenter);
+  imageRandom(imageRight);
+
+  awardsX2(imageLeft, imageCenter, imageRight);
+  credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
 });
