@@ -1,4 +1,5 @@
 const buttonStart = document.querySelector(".button");
+const buttonX2 = document.querySelector(".x2");
 
 const showModal = (cred) => {
   let credi = cred;
@@ -81,12 +82,8 @@ const credits = (credit) => {
   if (credit <= 0) {
     buttonBottomLeft.disabled = true;
     buttonBottomLeft.classList.replace("bottom", "bottomD");
-  }
-  if (credit <= 0) {
     buttonBottomCenter.disabled = true;
     buttonBottomCenter.classList.replace("bottom", "bottomD");
-  }
-  if (credit <= 0) {
     buttonBottomRight.disabled = true;
     buttonBottomRight.classList.replace("bottom", "bottomD");
   }
@@ -111,6 +108,18 @@ buttonStart.addEventListener("click", () => {
 
   awards(imageLeft, imageCenter, imageRight);
   credit -= 1;
+  coin.textContent = `Credits: ${credit} $`;
+  credits(credit);
+});
+
+buttonX2.addEventListener("click", () => {
+  leverSound();
+  imageRandom(imageLeft);
+  imageRandom(imageCenter);
+  imageRandom(imageRight);
+
+  awardsX2(imageLeft, imageCenter, imageRight);
+  credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
 });
