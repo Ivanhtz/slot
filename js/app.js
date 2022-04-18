@@ -74,12 +74,18 @@ const leverSound = () => {
 };
 
 const credits = (credit) => {
+  // if (credit <= 0) {
+  //   buttonStart.disabled = true;
+  //   buttonStart.classList.replace("button", "buttonD");
+  //   errorSound();
+  // }
   if (credit <= 0) {
     buttonStart.disabled = true;
     buttonStart.classList.replace("button", "buttonD");
     errorSound();
-  }
-  if (credit <= 0) {
+
+    buttonX2.disabled = true;
+    buttonX2.classList.replace("x2", "buttonDx2");
     buttonBottomLeft.disabled = true;
     buttonBottomLeft.classList.replace("bottom", "bottomD");
     buttonBottomCenter.disabled = true;
