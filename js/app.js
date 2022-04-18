@@ -81,12 +81,8 @@ const credits = (credit) => {
   if (credit <= 0) {
     buttonBottomLeft.disabled = true;
     buttonBottomLeft.classList.replace("bottom", "bottomD");
-  }
-  if (credit <= 0) {
     buttonBottomCenter.disabled = true;
     buttonBottomCenter.classList.replace("bottom", "bottomD");
-  }
-  if (credit <= 0) {
     buttonBottomRight.disabled = true;
     buttonBottomRight.classList.replace("bottom", "bottomD");
   }
