@@ -55,13 +55,13 @@ const advanceLowerButtons = (image) => {
 
 const errorSound = () => {
   const error = document.createElement("audio");
-  error.setAttribute("src", "./audio/fallo.mp3");
+  error.setAttribute("src", "./audio/error.mp3");
   error.play();
 };
 
 const winSound = () => {
   const win = document.createElement("audio");
-  win.setAttribute("src", "./audio/acierto.mp3");
+  win.setAttribute("src", "./audio/success.mp3");
   win.play();
 };
 
