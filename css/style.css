@@ -229,6 +229,7 @@ body {
   background-color: black;
   color: orangered;
   border: 5px solid orangered;
+  cursor: pointer;
 }
 
 .modal {
@@ -318,4 +319,11 @@ body {
 .award {
   width: 60px;
   height: 100px;
+}
+
+.textAdvance {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+  color: rgb(102, 255, 0);
 }

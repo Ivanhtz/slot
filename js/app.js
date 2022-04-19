@@ -1,6 +1,15 @@
 const buttonStart = document.querySelector(".button");
 const buttonX2 = document.querySelector(".x2");
 
+const slot = document.querySelector(".slot");
+const paragraph = document.createElement("p");
+paragraph.textContent = "ADVANCE X 2";
+paragraph.classList.add("textAdvance");
+
+const numberThrow = 12;
+let randomThrow = 0;
+let stop = 0;
+
 const showModal = (cred) => {
   let credi = cred;
   const modal = document.querySelector(".modal");
@@ -20,8 +29,6 @@ const showModal = (cred) => {
 const buttonReload = document.querySelector(".gold");
 
 let credit = 10;
-
-const images = ["1", "2", "3", "4", "5", "6", "7"];
 
 let imageLeft = document.createElement("img");
 imageLeft.setAttribute("src", "images/inicio.png");
@@ -57,13 +64,13 @@ const advanceLowerButtons = (image) => {
 
 const errorSound = () => {
   const error = document.createElement("audio");
-  error.setAttribute("src", "./audio/fallo.mp3");
+  error.setAttribute("src", "./audio/error.mp3");
   error.play();
 };
 
 const winSound = () => {
   const win = document.createElement("audio");
-  win.setAttribute("src", "./audio/acierto.mp3");
+  win.setAttribute("src", "./audio/success.mp3");
   win.play();
 };
 
@@ -91,10 +98,29 @@ const credits = (credit) => {
 };
 
 const imageRandom = (image) => {
-  let numberRandom = Math.floor(Math.random() * 7);
-  let imageRandom = images[numberRandom];
+  let numberRandom = Math.floor(Math.random() * (7 + 1 - 1) + 1);
 
-  image.setAttribute("src", `images/${imageRandom}.png`);
+  image.setAttribute("src", `images/${numberRandom}.png`);
+};
+
+const advance = (number) => {
+  if (numberThrow == randomThrow) {
+    slot.appendChild(paragraph);
+    buttonBottomLeft.disabled = false;
+    buttonBottomCenter.disabled = false;
+    buttonBottomRight.disabled = false;
+  }
+};
+
+const noAdvance = () => {
+  if (stop > 1) {
+    slot.removeChild(paragraph);
+    buttonBottomLeft.disabled = true;
+    buttonBottomCenter.disabled = true;
+    buttonBottomRight.disabled = true;
+
+    stop = 0;
+  }
 };
 
 awards(imageLeft, imageCenter, imageRight);
@@ -102,6 +128,8 @@ awards(imageLeft, imageCenter, imageRight);
 buttonReload.addEventListener("click", () => window.location.reload());
 
 buttonStart.addEventListener("click", () => {
+  randomThrow = Math.floor(Math.random() * (12 + 1 - 1) + 1);
+
   leverSound();
   imageRandom(imageLeft);
   imageRandom(imageCenter);
@@ -111,9 +139,12 @@ buttonStart.addEventListener("click", () => {
   credit -= 1;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
+  advance(randomThrow);
 });
 
 buttonX2.addEventListener("click", () => {
+  randomThrow = Math.floor(Math.random() * (12 + 1 - 1) + 1);
+
   leverSound();
   imageRandom(imageLeft);
   imageRandom(imageCenter);
@@ -123,16 +154,23 @@ buttonX2.addEventListener("click", () => {
   credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
+  advance(randomThrow);
 });
 
 buttonBottomLeft.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageLeft);
+  noAdvance();
 });
 
 buttonBottomCenter.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageCenter);
+  noAdvance();
 });
 
 buttonBottomRight.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageRight);
+  noAdvance();
 });
