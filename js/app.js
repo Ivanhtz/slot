@@ -21,8 +21,6 @@ const buttonReload = document.querySelector(".gold");
 
 let credit = 10;
 
-const images = ["1", "2", "3", "4", "5", "6", "7"];
-
 let imageLeft = document.createElement("img");
 imageLeft.setAttribute("src", "images/inicio.png");
 
@@ -91,6 +89,7 @@ const credits = (credit) => {
 };
 
 const imageRandom = (image) => {
+  const images = ["1", "2", "3", "4", "5", "6", "7"];
   let numberRandom = Math.floor(Math.random() * 7);
   let imageRandom = images[numberRandom];
 
