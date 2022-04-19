@@ -89,11 +89,9 @@ const credits = (credit) => {
 };
 
 const imageRandom = (image) => {
-  const images = ["1", "2", "3", "4", "5", "6", "7"];
-  let numberRandom = Math.floor(Math.random() * 7);
-  let imageRandom = images[numberRandom];
+  let numberRandom = Math.floor(Math.random() * (7 + 1 - 1) + 1);
 
-  image.setAttribute("src", `images/${imageRandom}.png`);
+  image.setAttribute("src", `images/${numberRandom}.png`);
 };
 
 awards(imageLeft, imageCenter, imageRight);
