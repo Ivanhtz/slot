@@ -1,6 +1,15 @@
 const buttonStart = document.querySelector(".button");
 const buttonX2 = document.querySelector(".x2");
 
+const slot = document.querySelector(".slot");
+const paragraph = document.createElement("p");
+paragraph.textContent = "ADVANCE X 2";
+paragraph.classList.add("textAdvance");
+
+const numberThrow = 12;
+let randomThrow = 0;
+let stop = 0;
+
 const showModal = (cred) => {
   let credi = cred;
   const modal = document.querySelector(".modal");
@@ -94,11 +103,33 @@ const imageRandom = (image) => {
   image.setAttribute("src", `images/${numberRandom}.png`);
 };
 
+const advance = (number) => {
+  if (numberThrow == randomThrow) {
+    slot.appendChild(paragraph);
+    buttonBottomLeft.disabled = false;
+    buttonBottomCenter.disabled = false;
+    buttonBottomRight.disabled = false;
+  }
+};
+
+const noAdvance = () => {
+  if (stop > 1) {
+    slot.removeChild(paragraph);
+    buttonBottomLeft.disabled = true;
+    buttonBottomCenter.disabled = true;
+    buttonBottomRight.disabled = true;
+
+    stop = 0;
+  }
+};
+
 awards(imageLeft, imageCenter, imageRight);
 
 buttonReload.addEventListener("click", () => window.location.reload());
 
 buttonStart.addEventListener("click", () => {
+  randomThrow = Math.floor(Math.random() * (12 + 1 - 1) + 1);
+
   leverSound();
   imageRandom(imageLeft);
   imageRandom(imageCenter);
@@ -108,9 +139,12 @@ buttonStart.addEventListener("click", () => {
   credit -= 1;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
+  advance(randomThrow);
 });
 
 buttonX2.addEventListener("click", () => {
+  randomThrow = Math.floor(Math.random() * (12 + 1 - 1) + 1);
+
   leverSound();
   imageRandom(imageLeft);
   imageRandom(imageCenter);
@@ -120,16 +154,23 @@ buttonX2.addEventListener("click", () => {
   credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
+  advance(randomThrow);
 });
 
 buttonBottomLeft.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageLeft);
+  noAdvance();
 });
 
 buttonBottomCenter.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageCenter);
+  noAdvance();
 });
 
 buttonBottomRight.addEventListener("click", () => {
+  stop += 1;
   advanceLowerButtons(imageRight);
+  noAdvance();
 });
