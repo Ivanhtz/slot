@@ -1,4 +1,4 @@
-const awards = (imageLeft, imageCenter, imageRight) => {
+const awards = (imageLeft, imageCenter, imageRight, number = 1) => {
   const imageSrcLeft = imageLeft.attributes.src.textContent;
   const imageSrcCenter = imageCenter.attributes.src.textContent;
   const imageSrcRight = imageRight.attributes.src.textContent;
@@ -10,59 +10,55 @@ const awards = (imageLeft, imageCenter, imageRight) => {
   const moon = "images/6.png";
   const star = "images/7.png";
 
-  if (imageSrcLeft === sun) {
-    if (imageSrcCenter === sun) {
-      if (imageSrcRight === sun) {
-        showModal(5);
-      }
-    }
+  if (imageSrcLeft === sun && imageSrcCenter === sun && imageSrcRight === sun) {
+    showModal(5 * number);
   }
 
-  if (imageSrcLeft === women) {
-    if (imageSrcCenter === women) {
-      if (imageSrcRight === women) {
-        showModal(10);
-      }
-    }
+  if (
+    imageSrcLeft === women &&
+    imageSrcCenter === women &&
+    imageSrcRight === women
+  ) {
+    showModal(10 * number);
   }
 
-  if (imageSrcLeft === diamond) {
-    if (imageSrcCenter === diamond) {
-      if (imageSrcRight === diamond) {
-        showModal(15);
-      }
-    }
+  if (
+    imageSrcLeft === diamond &&
+    imageSrcCenter === diamond &&
+    imageSrcRight === diamond
+  ) {
+    showModal(15 * number);
   }
 
-  if (imageSrcLeft === toad) {
-    if (imageSrcCenter === toad) {
-      if (imageSrcRight === toad) {
-        showModal(20);
-      }
-    }
+  if (
+    imageSrcLeft === toad &&
+    imageSrcCenter === toad &&
+    imageSrcRight === toad
+  ) {
+    showModal(20 * number);
   }
 
-  if (imageSrcLeft === heart) {
-    if (imageSrcCenter === heart) {
-      if (imageSrcRight === heart) {
-        showModal(25);
-      }
-    }
+  if (
+    imageSrcLeft === heart &&
+    imageSrcCenter === heart &&
+    imageSrcRight === heart
+  ) {
+    showModal(25 * number);
   }
 
-  if (imageSrcLeft === moon) {
-    if (imageSrcCenter === moon) {
-      if (imageSrcRight === moon) {
-        showModal(30);
-      }
-    }
+  if (
+    imageSrcLeft === moon &&
+    imageSrcCenter === moon &&
+    imageSrcRight === moon
+  ) {
+    showModal(30 * number);
   }
 
-  if (imageSrcLeft === star) {
-    if (imageSrcCenter === star) {
-      if (imageSrcRight === star) {
-        showModal(35);
-      }
-    }
+  if (
+    imageSrcLeft === star &&
+    imageSrcCenter === star &&
+    imageSrcRight === star
+  ) {
+    showModal(35 * number);
   }
 };

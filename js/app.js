@@ -103,7 +103,7 @@ const imageRandom = (image) => {
   image.setAttribute("src", `images/${numberRandom}.png`);
 };
 
-const advance = (number) => {
+const advance = () => {
   if (numberThrow == randomThrow) {
     slot.appendChild(paragraph);
     buttonBottomLeft.disabled = false;
@@ -150,7 +150,7 @@ buttonX2.addEventListener("click", () => {
   imageRandom(imageCenter);
   imageRandom(imageRight);
 
-  awardsX2(imageLeft, imageCenter, imageRight);
+  awards(imageLeft, imageCenter, imageRight, 2);
   credit -= 2;
   coin.textContent = `Credits: ${credit} $`;
   credits(credit);
