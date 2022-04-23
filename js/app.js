@@ -81,7 +81,9 @@ const leverSound = () => {
 };
 
 const credits = (credit) => {
-  if (credit <= 0) {
+  if (credit > 0) {
+    return;
+  } else {
     buttonStart.disabled = true;
     buttonStart.classList.replace("button", "buttonD");
     errorSound();
